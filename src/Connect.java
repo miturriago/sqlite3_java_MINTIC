@@ -1,22 +1,21 @@
 
+//Importamos nuestras librerías
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Connect {
-     /**
-     * Connect to a sample database
-     */
+
     public static void connect() {
         Connection conn = null;
         try {
-            // db parameters
-            String url = "jdbc:sqlite:C:/Users/ASUS/Desktop/project/mydatabase.db";
-            // create a connection to the database
+            // Ruta donde está la base de datos que creamos
+            String url = "jdbc:sqlite:C:/Users/ASUS/Documents/mintic/bd/testDb.db";
+            // Creamos una conexión
             conn = DriverManager.getConnection(url);
-            
+
             System.out.println("Connection to SQLite has been established.");
-            
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -29,6 +28,7 @@ public class Connect {
             }
         }
     }
+
     /**
      * @param args the command line arguments
      */
